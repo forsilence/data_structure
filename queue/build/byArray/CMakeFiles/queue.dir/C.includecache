@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+K:/c_learning_and_Algorithm/data_structure/queue/byArray/queue.c
+queue.h
+K:/c_learning_and_Algorithm/data_structure/queue/byArray/queue.h
+stdlib.h
+-
+
+K:/c_learning_and_Algorithm/data_structure/queue/byArray/queue.h
+stdlib.h
+-
+stdbool.h
+-
+

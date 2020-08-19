@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+K:/c_learning_and_Algorithm/data_structure/LinkedList/sllist/sllist.c
+stdbool.h
+-
+stdlib.h
+-
+stdio.h
+-
+sllist.h
+K:/c_learning_and_Algorithm/data_structure/LinkedList/sllist/sllist.h
+
+K:/c_learning_and_Algorithm/data_structure/LinkedList/sllist/sllist.h
+stdbool.h
+-
+stdio.h
+-
+
