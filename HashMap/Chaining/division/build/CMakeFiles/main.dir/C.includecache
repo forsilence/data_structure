@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+K:/c/data_structure/data_structure/HashMap/Chaining/division/hashMap.h
+stdbool.h
+-
+
+K:/c/data_structure/data_structure/HashMap/Chaining/division/main.c
+stdio.h
+-
+hashMap.h
+K:/c/data_structure/data_structure/HashMap/Chaining/division/hashMap.h
+
