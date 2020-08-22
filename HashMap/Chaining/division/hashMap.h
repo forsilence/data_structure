@@ -8,51 +8,62 @@
 # ifndef _HASHMAP_H
 # define _HASHMAP_H
 
-# ifndef elem_type
-# define elem_type int
-# endif
-
 # include<stdbool.h>
 # define hashMapLen 1021   // maxprimeNumber of between 0 to 1024
 
 struct hashMapLinkNode
 {
     /* data */
-    elem_type elem;
-    struct hashMapLinkNode *next;
+    char *key;
+    char *val;
 };
 
-typedef struct hashMapLinkNode Node;
+typedef struct hashMapLinkNode elem;
 
+struct linkedNode{
+    elem *elem_node;
+    struct linkedNode *next;
+};
 
-typedef struct hashMap
+typedef struct linkedNode Node;
+
+struct hashMap
 {
     /* data */
-    Node* data[hashMapLen];
-}hashMap;
+    Node *data[hashMapLen];
+};
+
+typedef struct hashMap hashMap;
 
 // create an empty hash map 
 hashMap *init_hashMap();
 
 // hash an element
-int hash(elem_type elem);
+int hash(char *c);
 
-// add element to hashMap :bool add_elem(hashMap *,elem_type)
-bool add_elem(hashMap *hM, elem_type x);
+// add key and val to hashMap
+bool add(hashMap *hM,char *key ,char *val);
+// add element to hashMap :bool add_elem(hashMap *,elem)
+bool add_elem(hashMap *hM, elem *x);
 
 // delete an element from hashMap
-bool delete_elem(hashMap *hM, elem_type x);
+bool delete_elem(hashMap *hM, elem x);
 
-// find element
-Node* find(hashMap *hM, elem_type x);
+// find element by key
+Node* find(hashMap *hM, char *key);
 
 // element in hashMap ?
-bool inMap(hashMap *hM, elem_type x);
+bool inMap(hashMap *hM, elem x);
 
-Node *parent(hashMap *hM,elem_type x);
+Node *parent(hashMap *hM,elem x);
 
 int *locLength(hashMap *hM);
 
 void showll(hashMap *hM);
+
+bool equals(char *x , char *y);
+
+// get char array length
+int get_char_array_len(char *char_array);
 
 # endif

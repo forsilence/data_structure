@@ -6,13 +6,17 @@
 
 #IncludeRegexTransform: 
 
+K:/c/data_structure/data_structure/HashMap/Chaining/division/hashMap.c
+hashMap.h
 K:/c/data_structure/data_structure/HashMap/Chaining/division/hashMap.h
 stdbool.h
 -
-
-K:/c/data_structure/data_structure/HashMap/Chaining/division/main.c
+stdlib.h
+-
 stdio.h
 -
-hashMap.h
+
 K:/c/data_structure/data_structure/HashMap/Chaining/division/hashMap.h
+stdbool.h
+-
 

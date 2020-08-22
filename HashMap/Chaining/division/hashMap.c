@@ -14,22 +14,62 @@ hashMap *init_hashMap(){
 }
 
 // hash by division
-int hash(elem_type elem)
+int hash(char *c)
 {
-    int val = elem%hashMapLen;
-    return val;
+    int len = get_char_array_len(c);
+    int val = 0;
+    for ( int i=0 ; i<len ; i++)
+        val+=(int)c[i];
+    int loc = val%hashMapLen;
+    return loc;
+}
+
+// add key and val to hashMap
+bool add(hashMap *hM,char *key,char *val)
+{
+    elem *new_node = (elem *)malloc(sizeof(elem));
+    if ( new_node )
+    {                                           // malloc successful
+        int keylen=get_char_array_len(key);
+        int vallen=get_char_array_len(val);
+        new_node->key = (char *)malloc(sizeof(char)*(keylen+1));
+        new_node->val = (char *)malloc(sizeof(char)*(vallen+1));
+        if ( !new_node->key )
+            return false;
+        // add key to new_node key
+        for ( int i=0 ; i<keylen ; i++ )
+            new_node->key[i] = key[i];
+        new_node->key[keylen]='\0';
+
+        if ( !new_node->val )
+            return false;
+        // add val to new_node val
+        for ( int i=0 ; i<vallen ; i++ )
+            new_node->val[i] = val[i];
+        new_node->val[vallen]='\0';
+        // add element failed
+        if ( !add_elem(hM,new_node) )
+        {
+            printf("can not add to array \n");
+            return false;
+        }
+    }
+    else                                        // malloc failed
+        return false;
+
+    return true;
 }
 
 // add element to hashMap
-bool add_elem(hashMap *hM, elem_type x)
+bool add_elem(hashMap *hM, elem *x)
 {
-    int location = hash(x);
+    int location = hash(x->key);
     if ( !hM->data[location] )          // location is empty!
     {
         hM->data[location] = (Node *)malloc(sizeof(Node));
         if ( hM->data[location] )       // malloc seccessful
         {
-            hM->data[location]->elem = x;
+            hM->data[location]->elem_node = x;
             hM->data[location]->next = NULL;
         }
         else                            // malloc failed 
@@ -44,7 +84,7 @@ bool add_elem(hashMap *hM, elem_type x)
         }
         temp->next = (Node *)malloc(sizeof(Node));
         if ( temp->next ){              // malloc successful
-            temp->next->elem = x;
+            temp->next->elem_node = x;
             temp->next->next = NULL;
         }
         else
@@ -54,9 +94,9 @@ bool add_elem(hashMap *hM, elem_type x)
 }
 
 // delete element from hashMap
-bool delete_elem(hashMap *hM,elem_type x)
+bool delete_elem(hashMap *hM,elem x)
 {
-    Node *curNode = find(hM,x);
+    Node *curNode = find(hM,x.key);
     if (curNode)                        // found the node with x
     {
         Node *pNode = parent(hM,x);
@@ -64,7 +104,7 @@ bool delete_elem(hashMap *hM,elem_type x)
             pNode->next = curNode->next;
         else                            // the node is the head
         {
-            int loc = hash(x);
+            int loc = hash(x.key);
             hM->data[loc] = NULL;
         }
         free(curNode);
@@ -74,42 +114,43 @@ bool delete_elem(hashMap *hM,elem_type x)
 }
 
 // find node with element x
-Node *find(hashMap *hM,elem_type x)
+Node *find(hashMap *hM,char *key)
 {
-    int loc = hash(x);
+    int loc = hash(key);
     if ( hM->data[loc] )                // loc is not empty
     {
         Node *temp = hM->data[loc];
-        while ( temp->elem != x && temp->next)      // not the node with x and have next node
+        while ( equals(temp->elem_node->key,key) && temp->next)      // not the node with x and have next node
             temp = temp->next;
-        if ( temp->elem == x )                      // node is the node with x
+        if ( equals( temp->elem_node->key,key) )                      // node is the node with x
             return temp;
     }
+    printf("not find!\n");
     return NULL;
 }
 
 // find x parent node
-Node *parent(hashMap *hM,elem_type x)
+Node *parent(hashMap *hM,elem x)
 {
-    int loc = hash(x);
+    int loc = hash(x.key);
     // loc is not empty
     if ( hM->data[loc] )
     {
         Node *temp = hM->data[loc];
         // try to find the node 
-        while(temp->next && temp->next->elem != x)
+        while(temp->next && !equals(temp->next->elem_node->key,x.key))
             temp = temp->next;
         // found the node
-        if (temp->next && temp->next->elem == x)
+        if (temp->next && equals(temp->next->elem_node->key,x.key))
             return temp;
     }
     return NULL;
 }
 
 // element in map ?
-bool inMap(hashMap *hM,elem_type x)
+bool inMap(hashMap *hM,elem x)
 {
-    Node *curNode = find(hM,x);
+    Node *curNode = find(hM,x.key);
     if (curNode)
         return true;
     return false;
@@ -153,4 +194,29 @@ void showll(hashMap *hM)
         }
         printf("]\n",ls[i]);
     }
+}
+
+// two elems equals ?
+bool equals(char *x , char *y)
+{
+    int xlen = get_char_array_len(x);
+    int ylen = get_char_array_len(y);
+    if (xlen == ylen)
+    {
+        for( int i=0 ; i<xlen ; i++ )
+        {
+            if ( x[i] != y[i] )
+                return false;
+        }
+        return true;
+    }
+    return false;
+}
+
+int get_char_array_len(char *char_array)
+{
+    int len = 0;
+    while (char_array[len] != '\0')
+        len++;
+    return len;
 }
