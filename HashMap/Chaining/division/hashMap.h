@@ -47,7 +47,7 @@ bool add(hashMap *hM,char *key ,char *val);
 bool add_elem(hashMap *hM, elem *x);
 
 // delete an element from hashMap
-bool delete_elem(hashMap *hM, elem x);
+bool delete_elem(hashMap *hM,char *key);
 
 // find element by key
 Node* find(hashMap *hM, char *key);
@@ -55,12 +55,14 @@ Node* find(hashMap *hM, char *key);
 // element in hashMap ?
 bool inMap(hashMap *hM, elem x);
 
-Node *parent(hashMap *hM,elem x);
+Node *parent(hashMap *hM,char *key);
 
+// length in each location
 int *locLength(hashMap *hM);
 
 void showll(hashMap *hM);
 
+// two array with char type is equal?
 bool equals(char *x , char *y);
 
 // get char array length

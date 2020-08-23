@@ -44,6 +44,22 @@ int main()
             printf(" element is not in hashMap\n");
     }
     printf("--> ends\n");
+    
+    // delete function:-> delete by key
+    if (delete_elem(&hM,key[3]))
+    {
+        printf("check for delete\n");
+            printf("--> find nodes\n");
+        for (int i = 0 ; i<4 ; i++)
+        {
+            Node *temp = find(&hM,key[i]);
+            if (temp)
+                printf("element %s is in hashMap\n",temp->elem_node->val);
+            else 
+                printf(" element is not in hashMap\n");
+        }
+        printf("--> ends\n");
+    }
     // showll(&hM);
 
     return 0;

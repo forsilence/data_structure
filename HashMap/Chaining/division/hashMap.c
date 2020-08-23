@@ -94,17 +94,17 @@ bool add_elem(hashMap *hM, elem *x)
 }
 
 // delete element from hashMap
-bool delete_elem(hashMap *hM,elem x)
+bool delete_elem(hashMap *hM,char *key)
 {
-    Node *curNode = find(hM,x.key);
+    Node *curNode = find(hM,key);
     if (curNode)                        // found the node with x
     {
-        Node *pNode = parent(hM,x);
+        Node *pNode = parent(hM,key);
         if (pNode)                      // found parent of the node with x
             pNode->next = curNode->next;
         else                            // the node is the head
         {
-            int loc = hash(x.key);
+            int loc = hash(key);
             hM->data[loc] = NULL;
         }
         free(curNode);
@@ -130,18 +130,18 @@ Node *find(hashMap *hM,char *key)
 }
 
 // find x parent node
-Node *parent(hashMap *hM,elem x)
+Node *parent(hashMap *hM,char *key)
 {
-    int loc = hash(x.key);
+    int loc = hash(key);
     // loc is not empty
     if ( hM->data[loc] )
     {
         Node *temp = hM->data[loc];
         // try to find the node 
-        while(temp->next && !equals(temp->next->elem_node->key,x.key))
+        while(temp->next && !equals(temp->next->elem_node->key,key))
             temp = temp->next;
         // found the node
-        if (temp->next && equals(temp->next->elem_node->key,x.key))
+        if (temp->next && equals(temp->next->elem_node->key,key))
             return temp;
     }
     return NULL;
