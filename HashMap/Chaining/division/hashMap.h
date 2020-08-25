@@ -9,7 +9,7 @@
 # define _HASHMAP_H
 
 # include<stdbool.h>
-# define hashMapLen 1021   // maxprimeNumber of between 0 to 1024
+# define hashMapLen 1021   // max prime Number of between 0 to 1024
 
 struct hashMapLinkNode
 {
