@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/dllist.h
+K:/c/data_structure/data_structure/LinkedList/dllist/dllist.h
 stdbool.h
 -
 
-K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/main.c
+K:/c/data_structure/data_structure/LinkedList/dllist/main.c
 stdio.h
 -
 stdlib.h
 -
 dllist.h
-K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/dllist.h
+K:/c/data_structure/data_structure/LinkedList/dllist/dllist.h
 

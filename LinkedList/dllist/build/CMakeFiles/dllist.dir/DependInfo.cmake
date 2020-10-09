@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/dllist.c" "K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/build/CMakeFiles/dllist.dir/dllist.c.obj"
-  "K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/main.c" "K:/c_learning_and_Algorithm/data_structure/LinkedList/dllist/build/CMakeFiles/dllist.dir/main.c.obj"
+  "K:/c/data_structure/data_structure/LinkedList/dllist/dllist.c" "K:/c/data_structure/data_structure/LinkedList/dllist/build/CMakeFiles/dllist.dir/dllist.c.obj"
+  "K:/c/data_structure/data_structure/LinkedList/dllist/main.c" "K:/c/data_structure/data_structure/LinkedList/dllist/build/CMakeFiles/dllist.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

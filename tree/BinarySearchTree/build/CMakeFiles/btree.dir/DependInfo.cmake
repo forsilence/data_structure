@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/btree.c" "K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/build/CMakeFiles/btree.dir/btree.c.obj"
-  "K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/main.c" "K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/build/CMakeFiles/btree.dir/main.c.obj"
+  "K:/c/data_structure/data_structure/tree/BinarySearchTree/btree.c" "K:/c/data_structure/data_structure/tree/BinarySearchTree/build/CMakeFiles/btree.dir/btree.c.obj"
+  "K:/c/data_structure/data_structure/tree/BinarySearchTree/main.c" "K:/c/data_structure/data_structure/tree/BinarySearchTree/build/CMakeFiles/btree.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

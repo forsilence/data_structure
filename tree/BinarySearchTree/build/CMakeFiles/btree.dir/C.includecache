@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/btree.h
+K:/c/data_structure/data_structure/tree/BinarySearchTree/btree.c
+btree.h
+K:/c/data_structure/data_structure/tree/BinarySearchTree/btree.h
+stdio.h
+-
+stdlib.h
+-
 stdbool.h
 -
 
-K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/main.c
+K:/c/data_structure/data_structure/tree/BinarySearchTree/btree.h
+stdbool.h
+-
+
+K:/c/data_structure/data_structure/tree/BinarySearchTree/main.c
 btree.h
-K:/c_learning_and_Algorithm/data_structure/tree/BinarySearchTree/btree.h
+K:/c/data_structure/data_structure/tree/BinarySearchTree/btree.h
 stdio.h
 -
 

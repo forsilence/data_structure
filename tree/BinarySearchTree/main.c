@@ -12,6 +12,7 @@ int main()
     int ls[] = {9,3,7,6,5,4,20,10};
     btree bt = *init_btree(ls,8);
     tree_walk(&bt);
+    insert(&bt,8);
 
     //search ?
     for (int i = 0 ; i < 8 ; i++){
